@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
 
-let boolean = true;
-
 class ObjectBrowser extends Component {
 	state = {
 		consoleWindow: {
@@ -26,7 +24,7 @@ class ObjectBrowser extends Component {
 		return Object.entries(this.state).map(subarray => 
 			<div className="object-tab-container">
 				<div onClick={this.changeTabExpansion} id={subarray[0]} className="object-tab">
-					<h4 className="object-editor-tab-text">{subarray[1].name}</h4>
+					<h4 className="object-tab-text">{subarray[1].name}</h4>
 				</div>
 				<div className={`object-tab-children-container ${this.state[subarray[0]].expanded ? '' : 'collapsed'}`}>
 					<ul className="object-tab-children-list">
