@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import '../App.css';
-import ScriptElement from './ScriptElement.js';
+import '../../App.css';
+import ScriptElement from '../ScriptElement/ScriptElement.js';
+import '../ScriptElementsMenu/ScriptElementsMenu.css';
 
 class ScriptElementsMenu extends Component {
 	state = {

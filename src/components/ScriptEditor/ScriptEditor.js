@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import '../App.css';
+import '../../App.css';
+import './ScriptEditor.css';
 import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-javascript';
 import 'ace-builds/src-noconflict/theme-tomorrow_night';

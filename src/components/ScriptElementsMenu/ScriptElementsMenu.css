@@ -1,0 +1,13 @@
+.script-elements {
+	grid-column: 21 / 25;
+	grid-row: 3 / 25;
+	background-color: #666666;
+}
+
+.script-elements-header-container {
+	display: flex;
+	flex-flow: column nowrap;
+	justify-content: center;
+	align-items: center;
+	border-bottom: solid;
+}

@@ -1,5 +1,6 @@
 import React from 'react';
-import '../App.css';
+import '../../App.css';
+import './FileMenuBar.css';
 
 const FileMenuBar = () => (
 	<div className="file-menu-bar">

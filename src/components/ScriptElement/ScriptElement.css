@@ -1,0 +1,9 @@
+.script-element {
+	padding: 0.5em 0 0.5em 0;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	border-bottom: solid 1px;
+	transition: 0.2s;
+}
