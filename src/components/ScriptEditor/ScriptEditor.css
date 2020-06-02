@@ -5,7 +5,7 @@
 	flex-flow: column nowrap;
 	/*justify-content: center;
 	align-items: center;*/
-	background-color: #888888;
+	background-color: #060714;
 	border-left: 1px solid #999999;
 	border-right: 1px solid #999999;
 }
@@ -13,21 +13,85 @@
 .script-editor-tab-container {
 	width: 100%;
 	height: 10%;
+	/*padding: 1em;*/
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	color: white;
 }
 
 .script-editor-tab-list {
+	margin-left: 1em;
+	width: 100%;
 	display: flex;
 	flex-flow: row nowrap;
-	justify-content: flex-start;
+	justify-content: space-around;
 	align-items: center;
+	/*background-color: gold;*/
 }
 
 .script-editor-tab {
+	width: 15%;
+	height: 50%;
+	padding: 0.7em;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: center;
+	align-items: center;
+	font-size: 0.7em;
+	border: 1px solid white;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	cursor: pointer;
+	transition: .2s ease-out;
+	opacity: 0.3;
+}
 
+.script-editor-tab:hover {
+	background-color: #222226;
+	/*opacity: 10;*/
+	transition: .2s ease-out;
+}
+
+.script-editor {
+	/*position: relative;*/
 }
 
 .script-editor-action-btns {
 	width: 100%;
-	height: 10%;
-	background-color: gold;
+	height: 5%;
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	/*background-color: gold;*/
+}
+
+.script-action-btn {
+	margin-left: 1em;
+	transition: .2s ease-out;
+}
+
+.script-action-btn:hover {
+	/*color: gold;*/
+	cursor: pointer;
+	transition: .2s ease-out;
+}
+
+.play:hover {
+	color: green;
+}
+
+.pause:hover {
+	color: gold;
+}
+
+.stop:hover {
+	color: #990000;
+}
+
+.active-tab {
+	background-color: #333333;
+	opacity: 0.5;
 }

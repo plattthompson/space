@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../../App.css';
 import './ObjectBrowser.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 class ObjectBrowser extends Component {
 	state = {
@@ -26,11 +28,18 @@ class ObjectBrowser extends Component {
 			<div className="object-tab-container">
 				<div onClick={this.changeTabExpansion} id={subarray[0]} className="object-tab">
 					<h4 className="object-tab-text">{subarray[1].name}</h4>
+					<FontAwesomeIcon
+						icon={faChevronDown}
+						// className="object-tab-chevron rotateChevron"
+						// className={`object-tab-chevron ` + subarray[1].expanded ? 'rotatedChevron' : ''}
+						className={`object-tab-chevron ${subarray[1].expanded ? 'rotatedChevron' : ''}`}
+						size="1x"
+					/>
 				</div>
 				<div className={`object-tab-children-container ${this.state[subarray[0]].expanded ? '' : 'collapsed'}`}>
 					<ul className="object-tab-children-list">
 						{subarray[1].children.map(child =>
-							<li>{child}</li>
+							<li className="object-tab-child">{child}</li>
 						)}
 					</ul>
 				</div>

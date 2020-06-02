@@ -4,6 +4,7 @@
 	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: center;
-	border-bottom: solid 1px;
+	border-bottom: 1px solid gray;
+	/*opacity*/
 	transition: 0.2s;
 }

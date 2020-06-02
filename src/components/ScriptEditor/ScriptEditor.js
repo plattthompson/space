@@ -4,29 +4,74 @@ import './ScriptEditor.css';
 import AceEditor from 'react-ace';
 import 'ace-builds/src-noconflict/mode-javascript';
 import 'ace-builds/src-noconflict/theme-tomorrow_night';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlay, faPause, faStop } from '@fortawesome/free-solid-svg-icons';
 
 class ScriptEditor extends Component {
 	state = {
+		currentTab: null,
+		currentTabId: null,
 		tabs: [
 			{
-				title: 'falcon heavy',
+				id: 1,
+				title: 'mercury_launch_sequence.js',
 				script: ''
 			},
 			{
-				title: 'apollo',
+				id: 2,
+				title: 'gemini.js',
+				script: ''
+			},
+			{
+				id: 3,
+				title: 'apollo.js',
+				script: '',
+			},
+			{
+				id: 4,
+				title: 'artemis.js',
 				script: ''
 			}
 		]
 	}
 
+	componentDidMount() {
+		const firstTabTitle = this.state.tabs[0].title;
+		this.setState({ currentTab: firstTabTitle });
+	}
+
 	renderTabs = () => {
 		return this.state.tabs.map(item => (
-			<li>{item.title}</li>
+			<li
+				onClick={e => this.changeTabs(e, item)}
+				className={`script-editor-tab ${this.state.currentTab === item.title ? 'active-tab' : ''}`}
+			>
+				{item.title}
+			</li>
 		))
 	}
 
 	renderScriptEditor = () => {
 
+	}
+
+	changeTabs = (e, item) => {
+		this.setState({ currentTab: item.title });
+	}
+
+	onScriptChange = e => {
+		const currentTab = this.state.currentTab;
+		const tabStateToBeUpdated = [...this.state.tabs];
+		tabStateToBeUpdated.map(tab => {
+			if (tab.title === currentTab) {
+				tab.script = e;
+			}
+		});
+		this.setState({
+			currentTab: currentTab,
+			tabs: tabStateToBeUpdated
+		})
+		console.log(this.state.tabs);
 	}
 
 	render() {
@@ -40,12 +85,32 @@ class ScriptEditor extends Component {
 				<AceEditor
 					mode="javascript"
 					theme="tomorrow_night"
-					setAutoScrollEditorIntoView="true"
+					// onChange={this.onScriptChange}
+					// value={this.state.tab}
+					// setAutoScrollEditorIntoView="true"
 					name="script-editor"
 					width="100%"
-					height="80%"
+					height="90%"
+					// maxLines={Infinity}
 				/>
 				<div className="script-editor-action-btns">
+					<FontAwesomeIcon
+						icon={faPlay}
+						className="script-action-btn play"
+						size="1x"
+					/>
+					<FontAwesomeIcon
+						icon={faPause}
+						className="script-action-btn pause"
+						size="1x"
+					/>
+					<FontAwesomeIcon
+						icon={faStop}
+						className="script-action-btn stop"
+						size="1x"
+					/>
+					<label className="script-action-btn">Throttle</label>
+					<input className="script-action-btn slider" type="range" min="1" max="100" />
 				</div>
 			</div>
 		)

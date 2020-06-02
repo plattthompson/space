@@ -19,7 +19,7 @@ class ScriptElementsMenu extends Component {
 
 	renderScriptElements = () => {
 		return this.state.scriptElements.map(element =>
-			<ScriptElement element={element} />
+			<ScriptElement element={element} draggable="true"/>
 		)
 	}
 
