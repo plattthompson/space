@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../App.css';
 import './ObjectBrowser.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faPen, faEye, faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 class ObjectBrowser extends Component {
 	state = {
@@ -60,6 +60,12 @@ class ObjectBrowser extends Component {
 	render() {
 		return (
 			<div className="object-browser">
+				<div className="object-browser-header-container">
+					<h2 className="object-browser-header">Object Browser</h2>
+					<FontAwesomeIcon icon={faPlus} className="object-browser-icon" size="1x" />
+					<FontAwesomeIcon icon={faPen} className="object-browser-icon" size="1x" />
+					<FontAwesomeIcon icon={faEye} className="object-browser-icon" size="1x" />
+				</div>
 				{this.renderTabs()}
 			</div>
 		)

@@ -7,6 +7,30 @@
 	/*transition: 1s;*/
 }
 
+.object-browser-header-container {
+	display: flex;
+	flex-flow: row nowrap;
+	justify-content: space-around;
+	align-items: center;
+	border-bottom: 1px solid #262630;
+}
+
+.object-browser-header {
+	font-size: 1.2em;
+	user-select: none;
+	/*text-transform: italic;*/
+}
+
+.object-browser-icon {
+	transition: .2s;
+}
+
+.object-browser-icon:hover {
+	color: white;
+	cursor: pointer;
+	transition: .2s;
+}
+
 .object-tab-container {
 	/*height: 5%;*/
 	padding: 1em;
@@ -15,7 +39,7 @@
 	justify-content: center;
 	/*background-color: gold;*/
 	/*border-bottom: 1px solid white;*/
-	border-bottom: 1px solid #999999;
+	border-bottom: 1px solid #262630;
 	/*transition: 1s;*/
 }
 

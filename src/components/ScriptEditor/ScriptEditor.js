@@ -14,22 +14,22 @@ class ScriptEditor extends Component {
 		tabs: [
 			{
 				id: 1,
-				title: 'mercury_launch_sequence.js',
+				title: 'artemis_launch_sequence',
 				script: ''
 			},
 			{
 				id: 2,
-				title: 'gemini.js',
+				title: 'mission_plan_description',
 				script: ''
 			},
 			{
 				id: 3,
-				title: 'apollo.js',
+				title: 'set_up_objects',
 				script: '',
 			},
 			{
 				id: 4,
-				title: 'artemis.js',
+				title: 'propagate',
 				script: ''
 			}
 		]

@@ -6,8 +6,8 @@
 	/*justify-content: center;
 	align-items: center;*/
 	background-color: #060714;
-	border-left: 1px solid #999999;
-	border-right: 1px solid #999999;
+	border-left: 1px solid #262630;
+	border-right: 1px solid #262630;
 }
 
 .script-editor-tab-container {
@@ -38,7 +38,8 @@
 	flex-flow: row nowrap;
 	justify-content: center;
 	align-items: center;
-	font-size: 0.7em;
+	/*font-size: 0.7em;*/
+	font-size: 0.8em;
 	border: 1px solid white;
 	white-space: nowrap;
 	overflow: hidden;

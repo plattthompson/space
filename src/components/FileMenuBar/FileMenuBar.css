@@ -16,7 +16,7 @@
 	width: 100%;
 	height: 50%;
 	font-size: 0.7em;
-	border-bottom: 1px solid white;
+	border-bottom: 1px solid #262630;
 }
 
 .menu-container {
@@ -34,9 +34,9 @@
 	/*padding: 0 1em 0 1em;*/
 }
 
-.file-menu:hover {
+/*.file-menu:hover {
 	background-color: #444444;
-}
+}*/
 
 .options-menu {
 	width: 30%;
@@ -59,7 +59,7 @@
 .bottom-file-menu-bar {
 	width: 100%;
 	height: 50%;
-	border-bottom: 1px solid white;
+	border-bottom: 1px solid #262630;
 }
 
 .icons {

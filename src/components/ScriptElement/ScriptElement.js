@@ -4,7 +4,7 @@ import './ScriptElement.css';
 
 const ScriptElement = props => (
 	<div className="script-element hover-transition user-select" draggable="true">
-		<li>{props.element}</li>
+		<li>{props.name}</li>
 	</div>
 )
 
