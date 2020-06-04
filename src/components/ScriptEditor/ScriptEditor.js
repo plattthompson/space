@@ -62,11 +62,11 @@ class ScriptEditor extends Component {
 	onScriptChange = e => {
 		const currentTab = this.state.currentTab;
 		const tabStateToBeUpdated = [...this.state.tabs];
-		tabStateToBeUpdated.map(tab => {
-			if (tab.title === currentTab) {
-				tab.script = e;
-			}
-		});
+		// tabStateToBeUpdated.map(tab => {
+		// 	if (tab.title === currentTab) {
+		// 		tab.script = e;
+		// 	}
+		// });
 		this.setState({
 			currentTab: currentTab,
 			tabs: tabStateToBeUpdated
@@ -86,7 +86,7 @@ class ScriptEditor extends Component {
 					mode="javascript"
 					theme="tomorrow_night"
 					// onChange={this.onScriptChange}
-					// value={this.state.tab}
+					value={this.state.tab}
 					// setAutoScrollEditorIntoView="true"
 					name="script-editor"
 					width="100%"

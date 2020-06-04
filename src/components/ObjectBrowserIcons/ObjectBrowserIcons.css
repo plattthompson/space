@@ -1,0 +1,48 @@
+.object-browser-icon {
+	position: relative;
+	top: 1px;
+	transition: .2s;
+}
+
+.object-browser-icon-container {
+	/*height: 100%;*/
+	position: relative;
+}
+
+.object-browser-icon:hover {
+	color: white;
+	cursor: pointer;
+	transition: .2s ease-out;
+}
+
+.tooltip {
+	/*width: 7em;*/
+	/*height: 4em;*/
+	position: absolute;
+	top: 1.7em;
+	left: -2.05em;
+	padding: 0.5em;
+	background-color: white;
+	border-radius: 5px;
+	box-shadow: 3px 6px 10px #000000;
+	z-index: 10;
+}
+
+.tooltip-option {
+	/*margin: 0 1em 0 1em;*/
+	/*margin: 0 .5em 0 .5em;*/
+	padding: 0 .5em 0 .5em;
+	border-bottom: 1px solid #999999;
+	cursor: pointer;
+	transition: .1s ease-out;
+}
+
+.tooltip-option:hover {
+	background-color: #333333;
+	cursor: pointer;
+	transition: .1s ease-out;
+}
+
+.hidden {
+	display: none;
+}
