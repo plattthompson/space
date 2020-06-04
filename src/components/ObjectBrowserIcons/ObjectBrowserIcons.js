@@ -4,10 +4,6 @@ import 'animate.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus, faPen, faEye } from '@fortawesome/free-solid-svg-icons';
 
-// const addOptions = [
-// 	{ value: 'space', label: 'NASA' }
-// ];
-
 const fadeIn = 'animate__animated animate__fadeIn animate__faster';
 
 const ObjectBrowserIcons = props => (

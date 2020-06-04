@@ -75,12 +75,16 @@
 }
 
 .script-action-btn:hover {
-	/*color: gold;*/
+	color: white;
 	cursor: pointer;
 	transition: .2s ease-out;
 }
 
-.play:hover {
+.throttle {
+	margin-left: 1em;
+}
+
+/*.play:hover {
 	color: green;
 }
 
@@ -90,7 +94,7 @@
 
 .stop:hover {
 	color: #990000;
-}
+}*/
 
 .active-tab {
 	background-color: #333333;

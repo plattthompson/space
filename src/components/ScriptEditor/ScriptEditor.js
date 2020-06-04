@@ -9,39 +9,45 @@ import { faPlay, faPause, faStop } from '@fortawesome/free-solid-svg-icons';
 
 class ScriptEditor extends Component {
 	state = {
+		// aceRef: React.createRef(),
+		currentTabID: null,
 		currentTab: null,
-		currentTabId: null,
-		tabs: [
-			{
+		currentScript: '',
+		tabs: {
+			1: {
 				id: 1,
 				title: 'artemis_launch_sequence',
-				script: ''
+				script: 'countdown to launch'
 			},
-			{
+			2: {
 				id: 2,
 				title: 'mission_plan_description',
-				script: ''
+				script: 'go to the moon'
 			},
-			{
+			3: {
 				id: 3,
 				title: 'set_up_objects',
-				script: '',
+				script: 'objects set up',
 			},
-			{
+			4: {
 				id: 4,
 				title: 'propagate',
 				script: ''
 			}
-		]
+		}
 	}
 
 	componentDidMount() {
-		const firstTabTitle = this.state.tabs[0].title;
-		this.setState({ currentTab: firstTabTitle });
+		const { id, title, script } = Object.values(this.state.tabs)[0];
+		this.setState({
+			currentTab: title,
+			currentTabID: id,
+			currentScript: script
+		});
 	}
 
 	renderTabs = () => {
-		return this.state.tabs.map(item => (
+		return Object.values(this.state.tabs).map(item => (
 			<li
 				onClick={e => this.changeTabs(e, item)}
 				className={`script-editor-tab ${this.state.currentTab === item.title ? 'active-tab' : ''}`}
@@ -51,27 +57,20 @@ class ScriptEditor extends Component {
 		))
 	}
 
-	renderScriptEditor = () => {
-
-	}
-
 	changeTabs = (e, item) => {
-		this.setState({ currentTab: item.title });
+		// this.setState({ currentTab: item.title });
+		this.setState({
+			currentTabID: item.id,
+			currentTab: item.title,
+			currentScript: item.script
+		});
 	}
 
-	onScriptChange = e => {
-		const currentTab = this.state.currentTab;
-		const tabStateToBeUpdated = [...this.state.tabs];
-		// tabStateToBeUpdated.map(tab => {
-		// 	if (tab.title === currentTab) {
-		// 		tab.script = e;
-		// 	}
-		// });
-		this.setState({
-			currentTab: currentTab,
-			tabs: tabStateToBeUpdated
-		})
-		console.log(this.state.tabs);
+	onScriptChange = script => {
+		const stateToBeUpdated = {...this.state};
+		stateToBeUpdated.currentScript = script;
+		stateToBeUpdated.tabs[stateToBeUpdated.currentTabID].script = script;
+		this.setState({ ...stateToBeUpdated });
 	}
 
 	render() {
@@ -85,8 +84,8 @@ class ScriptEditor extends Component {
 				<AceEditor
 					mode="javascript"
 					theme="tomorrow_night"
-					// onChange={this.onScriptChange}
-					value={this.state.tab}
+					onChange={this.onScriptChange}
+					value={this.state.currentScript}
 					// setAutoScrollEditorIntoView="true"
 					name="script-editor"
 					width="100%"
@@ -109,7 +108,7 @@ class ScriptEditor extends Component {
 						className="script-action-btn stop"
 						size="1x"
 					/>
-					<label className="script-action-btn">Throttle</label>
+					<label className="throttle">Throttle</label>
 					<input className="script-action-btn slider" type="range" min="1" max="100" />
 				</div>
 			</div>
