@@ -17,12 +17,12 @@ class ScriptEditor extends Component {
 			1: {
 				id: 1,
 				title: 'artemis_launch_sequence',
-				script: 'countdown to launch'
+				script: 'While (ISS.ElapsedTime() < TimeSpan.FromDays(2) {\n\tStep ISS;\n}'
 			},
 			2: {
 				id: 2,
 				title: 'mission_plan_description',
-				script: 'go to the moon'
+				script: 'if (readyForLaunch) {\n\tgoToTheMoon();\n}'
 			},
 			3: {
 				id: 3,
